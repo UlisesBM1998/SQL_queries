@@ -163,7 +163,8 @@ WHERE total_sales > (SELECT AVG(sales) from Sellers)
 */
 USE sqldatabase;
 SELECT first_name, SUM(sales) AS total_sales FROM Sellers
-WHERE employee_ID IN (SELECT employee_ID from Employees) --EXISTS
+WHERE employee_ID IN (SELECT employee_ID from Employees)--EXISTS
+GROUP BY first_name
 
 /*
 24 - Getting all expenses by some deparments higher than 5 000 000 ordered from highest to smallest 
